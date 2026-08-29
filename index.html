@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serie de Estudios en Hechos | Colección de E-books</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#031B4E; --navy:#062A66; --blue:#0A4FA3; --electric:#1677D2;
+  --sky:#5BB8FF; --white:#fff; --muted:#B8C9E5; --gold:#D4AF5A;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Montserrat,Arial,sans-serif;color:#10233f;background:#fff;line-height:1.6}
+.hero{min-height:760px;background:radial-gradient(circle at 78% 35%,#0c5dbb55 0,transparent 32%),linear-gradient(135deg,var(--deep),#020f2d 72%);color:#fff;display:flex;align-items:center;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-180px;top:-170px;background:#1677d21c;filter:blur(20px)}
+.container{width:min(1120px,92%);margin:auto}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center;position:relative;z-index:2}
+.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--sky);font-weight:700}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:18px 0;font-weight:800;letter-spacing:-2px}
+h1 span{color:#78c8ff}
+.lead{font-size:16px;color:#dce8f8;max-width:650px}
+.price-badge{display:inline-block;margin-top:22px;padding:10px 18px;border-radius:8px;background:#ffffff14;border:1px solid #ffffff33;font-size:13px;font-weight:700;color:#fff}
+.price-badge b{color:#78c8ff;font-size:16px}
+.cta{display:inline-block;margin-top:16px;padding:16px 27px;border-radius:10px;background:linear-gradient(135deg,#2188e8,#0d5cb7);color:#fff;text-decoration:none;font-size:12px;font-weight:800;letter-spacing:.5px;box-shadow:0 12px 30px #00173580}
+.cta:hover{transform:translateY(-2px)}
+.meta{display:flex;gap:24px;margin-top:25px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.book-stack{display:flex;justify-content:center;position:relative;flex-wrap:wrap}
+.book{width:min(140px,34vw)}
+.book:nth-child(1){transform:rotate(-14deg) translateX(46px);z-index:1}
+.book:nth-child(2){transform:rotate(-7deg) translateX(24px);z-index:2}
+.book:nth-child(3){transform:rotate(0deg) translateX(0);z-index:3}
+.book:nth-child(4){transform:rotate(7deg) translateX(-24px);z-index:2}
+.book:nth-child(5){transform:rotate(14deg) translateX(-46px);z-index:1}
+.book-cover{aspect-ratio:2/3;background:linear-gradient(160deg,#0b63be,#031538 72%);border:1px solid #70bfff66;border-radius:4px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 0 0 50px #02132e88,0 30px 35px #0009}
+.book-cover small{font-size:7px;letter-spacing:2px;color:#a9d9ff;font-weight:700}.book-title{font-size:16px;line-height:1.05;font-weight:800}.book-sub{font-size:7px;color:#d7e8fa}.cross{font-size:30px;color:#8fd0ff;text-align:center;text-shadow:0 0 30px #4aaeff}
+section{padding:85px 0}.light{background:#f5f9ff}.dark{background:var(--deep);color:#fff}
+.section-title{text-align:center;font-size:34px;line-height:1.15;margin:0 auto 14px;font-weight:800;color:var(--deep)}
+.dark .section-title{color:#fff}.section-sub{text-align:center;max-width:700px;margin:0 auto 45px;font-size:12px;color:#61728c}.dark .section-sub{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #dbe8f8;border-radius:16px;padding:28px;box-shadow:0 12px 35px #062a6610}.dark .card{background:#062a66;border-color:#2874bd55;color:#fff}.icon{width:45px;height:45px;border-radius:12px;background:#e4f3ff;color:#0a4fa3;display:grid;place-items:center;font-size:20px;margin-bottom:18px}.card h3{font-size:15px;margin:0 0 8px}.card p{font-size:12px;color:#64748b;margin:0}.dark .card p{color:#bfd0e7}
+.chapters{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.chapter{padding:20px;border-left:3px solid var(--electric);background:#fff;border-radius:0 12px 12px 0;box-shadow:0 8px 25px #062a660c}.chapter strong{font-size:12px;color:var(--blue)}.chapter h3{margin:4px 0;font-size:15px;color:var(--deep)}.chapter p{font-size:12px;color:#66758a;margin:0}
+.book-block{margin-bottom:60px}.book-block:last-child{margin-bottom:0}
+.book-block-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.book-tag{font-size:11px;font-weight:800;letter-spacing:1px;color:#fff;background:var(--electric);padding:6px 14px;border-radius:20px;white-space:nowrap}
+.book-block-head h3{font-size:20px;margin:0;color:#fff}
+.author{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}.author-box{height:300px;border-radius:22px;background:linear-gradient(145deg,#0a4fa3,#031b4e);display:grid;place-items:center;color:#9fd7ff;font-size:80px}.author h2{font-size:34px;color:var(--deep);margin:0 0 12px}.author p,.author li{font-size:12px;color:#60718a}.author ul{padding-left:18px}
+.offer{background:linear-gradient(135deg,var(--deep),#073d86);color:#fff;text-align:center}.price{font-size:50px;font-weight:800;margin:15px}.price-old{font-size:18px;text-decoration:line-through;color:#9fb6db;font-weight:600;margin-right:10px}.offer .section-title{color:#fff}.offer p{font-size:12px;color:#c7daf3}
+.bundle-list{list-style:none;padding:0;margin:22px auto 0;max-width:420px;text-align:left;font-size:13px}.bundle-list li{padding:8px 0;border-bottom:1px solid #ffffff22}
+.faq{max-width:760px;margin:auto}.faq details{border-bottom:1px solid #dbe5f1;padding:17px 0}.faq summary{font-size:12px;font-weight:700;color:var(--deep);cursor:pointer}.faq p{font-size:12px;color:#64748b}
+footer{background:#020f2d;color:#90a9ca;padding:35px 0;text-align:center;font-size:11px}
+@media(max-width:800px){.hero{min-height:auto;padding:85px 0}.hero-grid,.author{grid-template-columns:1fr}.hero-copy{text-align:center}.lead{margin:auto}.meta{justify-content:center}.cards{grid-template-columns:1fr}.chapters{grid-template-columns:1fr}.book-stack{margin-top:30px}section{padding:65px 0}.author-box{height:220px}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="container hero-grid">
+<div class="hero-copy">
+<div class="eyebrow">Serie de Mensajes y Estudios en el Libro de los Hechos</div>
+<h1>La Colección de <span>Estudios en Hechos</span></h1>
+<p class="lead">Cinco e-books, un solo viaje por el nacimiento, crecimiento, prueba, misión y expansión de la Iglesia: desde el derramamiento del Espíritu Santo hasta una comunidad en movimiento, una fe forjada en el fuego de la prueba, una iglesia enviada al mundo y una gracia que rompe toda barrera cultural. Comprenda las Escrituras, fortalezca su fe y transforme el conocimiento bíblico en práctica.</p>
+<div><span class="price-badge">Colección completa por solo <b>$34,70</b></span></div><br>
+<a class="cta" href="#offer">QUIERO LA COLECCIÓN</a>
+<div class="meta"><span>✓ 5 e-books</span><span>✓ Estudio bíblico</span><span>✓ Grupos pequeños</span></div>
+</div>
+<div class="book-stack">
+<div class="book"><div class="book-cover"><small>E-BOOK 1</small><div><div class="cross">✦</div><div class="book-title">EL OBRAR DEL<br>ESPÍRITU SANTO</div></div><div class="book-sub">Rev. Rodrigo Alexandre de Melo</div></div></div>
+<div class="book"><div class="book-cover"><small>E-BOOK 2</small><div><div class="cross">✦</div><div class="book-title">IGLESIA EN<br>MOVIMIENTO</div></div><div class="book-sub">Rev. Rodrigo Alexandre de Melo</div></div></div>
+<div class="book"><div class="book-cover"><small>E-BOOK 3</small><div><div class="cross">✦</div><div class="book-title">IGLESIA<br>RESILIENTE</div></div><div class="book-sub">Rev. Rodrigo Alexandre de Melo</div></div></div>
+<div class="book"><div class="book-cover"><small>E-BOOK 4</small><div><div class="cross">✦</div><div class="book-title">LA MISIÓN DE<br>LA IGLESIA</div></div><div class="book-sub">Rev. Rodrigo Alexandre de Melo</div></div></div>
+<div class="book"><div class="book-cover"><small>E-BOOK 5</small><div><div class="cross">✦</div><div class="book-title">LA EXPANSIÓN<br>DE LA GRACIA</div></div><div class="book-sub">Rev. Rodrigo Alexandre de Melo</div></div></div>
+</div>
+</div></header>
+
+<section class="light">
+<div class="container">
+<h2 class="section-title">Más que una lectura.<br>Un viaje de edificación.</h2>
+<p class="section-sub">Juntos, estos cinco e-books fueron estructurados para correlacionar las Escrituras con la vida práctica y pueden ser usados en devocionales individuales, Escuela Dominical, Grupos Pequeños y Células.</p>
+<div class="cards">
+<div class="card"><div class="icon">🔥</div><h3>El poder del Espíritu</h3><p>Comprenda el papel del Espíritu Santo en la capacitación, la santificación y el testimonio cristiano.</p></div>
+<div class="card"><div class="icon">📖</div><h3>Fundamento bíblico</h3><p>Estudios desarrollados a partir de textos del libro de los Hechos y sus correlaciones bíblicas.</p></div>
+<div class="card"><div class="icon">🌍</div><h3>Gracia sin fronteras</h3><p>Desde Pentecostés hasta la misión a los gentiles — vea cómo el Evangelio rompe toda barrera cultural.</p></div>
+</div>
+</div>
+</section>
+
+<section class="dark">
+<div class="container">
+<h2 class="section-title">¿Qué encontrará<br>en estas páginas?</h2>
+<p class="section-sub">Veintiocho estudios que abarcan el nacimiento, crecimiento, prueba, misión y expansión de la iglesia primitiva y su aplicación a la vida cristiana de hoy.</p>
+
+<div class="book-block">
+<div class="book-block-head"><span class="book-tag">E-BOOK 1</span><h3>El Obrar del Espíritu Santo</h3></div>
+<div class="chapters">
+<div class="card"><strong>CAPÍTULO 01</strong><h3>El Bautismo con el Espíritu Santo</h3><p>Hechos 1:1–9 — promesa, espera, obediencia y capacitación para testificar.</p></div>
+<div class="card"><strong>CAPÍTULO 02</strong><h3>El Mensaje de la Iglesia</h3><p>Hechos 1:1–11 — Cristo, la resurrección, el Reino de Dios y la promesa del Espíritu.</p></div>
+<div class="card"><strong>CAPÍTULO 03</strong><h3>Comenzando Bien y Terminando Mal</h3><p>Hechos 1:16-17 — una advertencia trazada de la trayectoria de Judas sobre la superficialidad y el arrepentimiento.</p></div>
+<div class="card"><strong>CAPÍTULO 04</strong><h3>Los "De Repentes" de Dios</h3><p>Hechos 2:1–2 — oración, obediencia y las intervenciones transformadoras de Dios.</p></div>
+<div class="card"><strong>CAPÍTULO 05</strong><h3>¿Qué Quiere Decir Esto?</h3><p>Hechos 2:1–13 — la naturaleza, el origen y el propósito de la obra del Espíritu Santo.</p></div>
+<div class="card"><strong>CAPÍTULO 06</strong><h3>¿El Pedro Que Da Pena, o el Pedro Que Vale la Pena?</h3><p>Hechos 2:14–41 — la transformación de Pedro y su nueva intrepidez para testificar.</p></div>
+</div>
+</div>
+
+<div class="book-block">
+<div class="book-block-head"><span class="book-tag">E-BOOK 2</span><h3>Iglesia en Movimiento</h3></div>
+<div class="chapters">
+<div class="card"><strong>CAPÍTULO 01</strong><h3>Vivir en Comunidad</h3><p>Hechos 2:42–47 — comunión, perseverancia en la Palabra, oración y generosidad.</p></div>
+<div class="card"><strong>CAPÍTULO 02</strong><h3>¡Míranos!</h3><p>Hechos 3:1–10 — la sanidad en la puerta la Hermosa y la autoridad del nombre de Jesús.</p></div>
+<div class="card"><strong>CAPÍTULO 03</strong><h3>El Mensaje que Debemos Anunciar</h3><p>Hechos 4:1–12 — audacia y fidelidad al Evangelio frente a la oposición.</p></div>
+<div class="card"><strong>CAPÍTULO 04</strong><h3>Jesús, ¡Nuestra Salvación!</h3><p>Hechos 4:8–12 — la centralidad y exclusividad de Cristo como Piedra Angular y Salvador.</p></div>
+<div class="card"><strong>CAPÍTULO 05</strong><h3>La Comunidad Cristiana</h3><p>Hechos 4:32–37 — unidad, generosidad y cuidado práctico, con Bernabé como ejemplo.</p></div>
+</div>
+</div>
+
+<div class="book-block">
+<div class="book-block-head"><span class="book-tag">E-BOOK 3</span><h3>Iglesia Resiliente — Fe Forjada en el Fuego</h3></div>
+<div class="chapters">
+<div class="card"><strong>CAPÍTULO 01</strong><h3>¿Cuándo Dejamos que Satanás Llene Nuestro Corazón?</h3><p>Hechos 5:1–11 — Ananías y Safira, la hipocresía y el temor del Señor.</p></div>
+<div class="card"><strong>CAPÍTULO 02</strong><h3>Dignos de Sufrir por el Nombre</h3><p>Hechos 5:41 — resiliencia, gozo y honor en medio de la persecución.</p></div>
+<div class="card"><strong>CAPÍTULO 03</strong><h3>Servicio Ejemplar</h3><p>Hechos 6:1–7 — Esteban y la dignidad de todo servicio lleno del Espíritu.</p></div>
+<div class="card"><strong>CAPÍTULO 04</strong><h3>Fieles Cuando Todo Sale Mal</h3><p>Hechos 7:9–10 — el ejemplo de José: la presencia de Dios en medio de la injusticia.</p></div>
+<div class="card"><strong>CAPÍTULO 05</strong><h3>Dios Ve, Escucha y Desciende</h3><p>Hechos 7:31–34 — Moisés y la zarza ardiente: el tiempo compasivo de Dios.</p></div>
+<div class="card"><strong>CAPÍTULO 06</strong><h3>Cuando el Corazón Regresa a Egipto</h3><p>Hechos 7:39–41 — la idolatría oculta y el peligro de la amnesia espiritual.</p></div>
+<div class="card"><strong>CAPÍTULO 07</strong><h3>Firmes Hasta el Final</h3><p>Hechos 7:51–60 — el martirio de Esteban: fe, perdón y eternidad.</p></div>
+</div>
+</div>
+
+<div class="book-block">
+<div class="book-block-head"><span class="book-tag">E-BOOK 4</span><h3>La Misión de la Iglesia</h3></div>
+<div class="chapters">
+<div class="card"><strong>CAPÍTULO 01</strong><h3>Cuando Dios Dice: ¡Ve!</h3><p>Hechos 8:26–40 — Felipe y el eunuco etíope: urgencia y obediencia en la misión.</p></div>
+<div class="card"><strong>CAPÍTULO 02</strong><h3>Frutos de una Conversión Genuina</h3><p>Hechos 9:1–6 — el encuentro de Saulo con Jesús y las marcas visibles de la transformación.</p></div>
+<div class="card"><strong>CAPÍTULO 03</strong><h3>Una Iglesia que Crece por Dentro y por Fuera</h3><p>Hechos 9:31 — paz, misión y madurez como fundamento del crecimiento saludable.</p></div>
+<div class="card"><strong>CAPÍTULO 04</strong><h3>Una Iglesia que Cuida a las Personas</h3><p>Hechos 9:32–43 — Pedro, Eneas y Dorcas: un amor práctico que produce testimonio.</p></div>
+</div>
+</div>
+
+<div class="book-block">
+<div class="book-block-head"><span class="book-tag">E-BOOK 5</span><h3>La Expansión de la Gracia y el Evangelio sin Fronteras</h3></div>
+<div class="chapters">
+<div class="card"><strong>CAPÍTULO 01</strong><h3>El Dios que Habla</h3><p>Hechos 10:1–6 — Dios prepara, confronta y guía a través de visiones y del Espíritu Santo.</p></div>
+<div class="card"><strong>CAPÍTULO 02</strong><h3>El Dios que No Hace Acepción de Personas</h3><p>Hechos 10:34–35 — derribando barreras culturales y el alcance universal de la gracia.</p></div>
+<div class="card"><strong>CAPÍTULO 03</strong><h3>¿Quién es Jesús?</h3><p>Hechos 10:36–43 — el resumen del Evangelio de Pedro: Señor, sanador, crucificado, resucitado, juez y salvador.</p></div>
+<div class="card"><strong>CAPÍTULO 04</strong><h3>¿Cuándo Estamos Resistiendo a Dios?</h3><p>Hechos 11:17 — discernir la obra nueva de Dios en lugar de defender viejas tradiciones.</p></div>
+<div class="card"><strong>CAPÍTULO 05</strong><h3>A los Discípulos se les Llamó Cristianos</h3><p>Hechos 11:19–30 — Antioquía, el discipulado y una fe que transforma el carácter y la conducta.</p></div>
+<div class="card"><strong>CAPÍTULO 06</strong><h3>¿Qué Sucede Cuando la Iglesia Ora?</h3><p>Hechos 12:5 — la liberación de Pedro y el poder de la iglesia que ora.</p></div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container author">
+<div class="author-box">✝</div>
+<div>
+<h2>Sobre el autor</h2>
+<h3 style="color:#0a4fa3;font-size:16px">Rev. Rodrigo Alexandre de Melo</h3>
+<p>Pastor desde el año 2000, ordenado Reverendo en 2006, miembro de la Iglesia del Nazareno desde 1994, con más de 25 años de ministerio pastoral, plantación de iglesias y desarrollo de liderazgo en Brasil. Casado con Fabiana hace 25 años y padre de Caio Fábio.</p>
+<ul><li>Licenciatura en Teología</li><li>Posgrado en Predicación Bíblica</li><li>Posgrado en Gestión Estratégica de Personas</li><li>MBA en Gestión Estratégica de Negocios</li></ul>
+</div>
+</div>
+</section>
+
+<section class="offer" id="offer">
+<div class="container">
+<h2 class="section-title">Comience hoy su jornada</h2>
+<p>Tenga acceso a la colección completa de Hechos — <strong>El Obrar del Espíritu Santo</strong>, <strong>Iglesia en Movimiento</strong>, <strong>Iglesia Resiliente</strong>, <strong>La Misión de la Iglesia</strong> y <strong>La Expansión de la Gracia</strong> — y use este material para profundizar su fe y edificar a otros.</p>
+<ul class="bundle-list">
+<li>✓ E-book 1 — El Obrar del Espíritu Santo (6 capítulos)</li>
+<li>✓ E-book 2 — Iglesia en Movimiento (5 capítulos)</li>
+<li>✓ E-book 3 — Iglesia Resiliente: Fe Forjada en el Fuego (7 capítulos)</li>
+<li>✓ E-book 4 — La Misión de la Iglesia (4 capítulos)</li>
+<li>✓ E-book 5 — La Expansión de la Gracia y el Evangelio sin Fronteras (6 capítulos)</li>
+<li>✓ Guías de discusión para Grupos Pequeños / Escuela Dominical</li>
+</ul>
+<div class="price">$34,70</div>
+<a class="cta" href="#">COMPRAR LA COLECCIÓN</a>
+<p style="margin-top:18px">Pago y entrega digital conforme a la plataforma de venta.</p>
+</div>
+</section>
+
+<section>
+<div class="container faq">
+<h2 class="section-title">Preguntas frecuentes</h2>
+<details><summary>¿Los e-books son digitales?</summary><p>Sí. Los cinco e-books se entregan digitalmente.</p></details>
+<details><summary>¿Puedo usar este material en Grupos Pequeños?</summary><p>Sí. Los cinco e-books incluyen una guía con preguntas para Grupos Pequeños y Escuela Dominical.</p></details>
+<details><summary>¿El contenido está basado en Hechos?</summary><p>Sí. Esta colección es una serie de mensajes y estudios en el libro de los Hechos: el E-book 1 cubre Hechos 1–2, el E-book 2 continúa en Hechos 2–4, el E-book 3 avanza en Hechos 5–7, el E-book 4 se adentra en Hechos 8–9, y el E-book 5 concluye con Hechos 10–12.</p></details>
+<details><summary>¿Necesito leerlos en orden?</summary><p>Se recomienda. Cada e-book continúa justo donde el anterior termina — desde el derramamiento del Espíritu (E-book 1), pasando por una comunidad en movimiento (E-book 2), una fe forjada en la prueba (E-book 3), una iglesia enviada en misión (E-book 4), hasta la expansión de la gracia a través de toda barrera cultural (E-book 5).</p></details>
+<details><summary>¿Qué hay de nuevo en el E-book 5?</summary><p>El E-book 5, "La Expansión de la Gracia y el Evangelio sin Fronteras", cubre la conversión de Cornelio, el Espíritu derramado sobre los gentiles, los primeros creyentes llamados "cristianos" en Antioquía y la liberación milagrosa de Pedro a través de la oración (Hechos 10–12).</p></details>
+</div>
+</section>
+<footer>
+© 2026 — La Colección de Estudios de Hechos · Rev. Rodrigo Alexandre de Melo · Todos los derechos reservados.<br>
+Material producido y generado por: Carlos Newman - Gerente de Proyecto / Gerente de Entrega / Productor Digital
+</footer>
+</body>
+</html>
